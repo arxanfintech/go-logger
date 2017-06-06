@@ -132,8 +132,8 @@ func New(args ...interface{}) (*Logger, error) {
 
 // The log commnand is the function available to user to log message, lvl specifies
 // the degree of the messagethe user wants to log, message is the info user wants to log
-func (l *Logger) Log(lvl string, message string) {
-	l.log_internal(lvl, message, 2)
+func (l *Logger) Log(lvl string, calldepth int, message string) {
+	l.log_internal(lvl, message, calldepth)
 }
 
 func (l *Logger) log_internal(lvl string, message string, pos int) {
